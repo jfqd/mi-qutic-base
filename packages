@@ -1,21 +1,14 @@
 # for not vim users
 nano
 # munin-node
-https://download.qutic.com/pkgsrc/extra/2017Q3/x86_64/munin-common-2.0.30.tgz
-https://download.qutic.com/pkgsrc/extra/2017Q3/x86_64/munin-node-2.0.30.tgz
+munin-common-2.0.30
+munin-node-2.0.30
 p5-Net-CIDR
 p5-LWP-UserAgent-Determined
 p5-Switch
-# nullmailer
-https://download.qutic.com/pkgsrc/extra/2017Q3/x86_64/nullmailer-2.0.tgz
 # spiped
 spiped
 # dtrace
 dtracetools
-# tools
-sudo
-gsed
-# grep required to work with sm- commands
-grep
 # letsencrypt
 py35-certbot
