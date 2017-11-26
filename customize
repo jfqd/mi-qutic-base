@@ -27,8 +27,8 @@ MUNIN_PLUGINS="
 "
 
 echo "* Use the skylime pkgsrc mirror"
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.smartos.skylime.net:g' /opt/local/etc/pkgin/repositories.conf
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.smartos.skylime.net:g' /opt/local/etc/pkg_install.conf
+gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
+gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
 pkg_admin rebuild
 pkgin -y up
 
@@ -37,16 +37,25 @@ echo "* Create munin template file that will be used during mdata setup"
 cp /opt/local/etc/munin/munin-node.conf /opt/local/etc/munin/munin-node.conf.tpl
 
 echo "* Download and install community munin plugins (overwrite all other plugins)"
-curl -L https://github.com/drscream/smartos-munin-plugins/archive/v${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
+curl -L https://download.qutic.com/src/munin-plugins/smartos-v${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
 
 echo "* Activate munin plugins"
-/opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
+/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*
 
 echo "* Cleaning up."
 rm -rf /root/*
+
+# get the latest pkgsrc-lts version
+pkgin clean
+/usr/bin/rm -rf /opt/local
+/usr/bin/curl -s https://download.qutic.com/pkgsrc/bootstrap/bootstrap-2016Q4-x86_64.tar.gz | /usr/bin/gzcat | /usr/bin/tar -xf - -C /
+
+pkg_add https://download.qutic.com/pkgsrc/2016Q4/x86_64/All/smtools-20160926.tgz
+pkg_add https://download.qutic.com/pkgsrc/2016Q4/x86_64/All/zoneinit-1.6.9.tgz
+pkg_add https://download.qutic.com/pkgsrc/2016Q4/x86_64/All/rsyslog-8.28.0.tgz
 
 # Provide workaround for /.zonecontrol/metadata.sock issue
 # https://github.com/joyent/smtools/issues/3

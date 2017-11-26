@@ -1,11 +1,11 @@
-# mi-core-base
+# mi-qutic-base
 
 This repository is based on [Joyent mibe](https://github.com/joyent/mibe).
 
 ## description
 
-Basic core.io mibe image with default setup of infrastructure services like
-munin and remote syslog. This should be the default image for all core.io zones.
+Basic qutic.io mibe image with default setup of infrastructure services like
+munin and remote syslog. This should be the default image for all qutic zones.
 
 ## mdata variables
 
@@ -37,7 +37,7 @@ List of ip addresses of the munin master server that is allowed to connect. The 
 
 ### postfix
 
-To have cron emails on errors we like to configure postfix as local smtp server.
+To have cron emails on errors we like to configure nullmailer as local smtp server.
 
 - `mail_smarthost`: hostname of remote smtp server
 - `mail_auth_user`: smtp username for authentication
@@ -52,4 +52,3 @@ Configure ssh public and private key pairs for the host daemon via `mdata`.
 - `ssh_host_rsa_key.pub`: public SSH rsa key
 - `ssh_host_dsa_key`:     private SSH dsa key
 - `ssh_host_dsa_key.pub`: public SSH dsa key
-

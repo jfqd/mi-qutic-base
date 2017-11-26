@@ -1,2 +1,2 @@
 # Run mdata setup on provision state
-/opt/core/bin/mdata-setup
+/opt/qutic/bin/mdata-setup

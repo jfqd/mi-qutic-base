@@ -1,27 +1,21 @@
 # for not vim users
 nano
 # munin-node
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/munin-common-2.0.30.tgz
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/munin-node-2.0.30.tgz
+https://pkgsrc.qutic.com/extra/2017Q3/x86_64/munin-common-2.0.30.tgz
+https://pkgsrc.qutic.com/extra/2017Q3/x86_64/munin-node-2.0.30.tgz
 p5-Net-CIDR
 p5-LWP-UserAgent-Determined
 p5-Switch
 # nullmailer
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/nullmailer-2.0.tgz
+https://pkgsrc.qutic.com/extra/2017Q3/x86_64/nullmailer-2.0.tgz
 # spiped
 spiped
 # dtrace
 dtracetools
-# logtail
-logcheck
-# colorlog
-ccze
 # tools
 sudo
 gsed
 # grep required to work with sm- commands
 grep
-# backup
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/znapzend-0.17.0nb1.tgz
 # letsencrypt
 py35-certbot
