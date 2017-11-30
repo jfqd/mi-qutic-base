@@ -12,5 +12,9 @@ spiped
 dtracetools
 # letsencrypt
 py35-certbot
+sudo
+gsed
+# grep required to work with sm- commands
+grep
 # elk
 beats
