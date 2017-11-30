@@ -12,3 +12,5 @@ spiped
 dtracetools
 # letsencrypt
 py35-certbot
+# elk
+beats

@@ -5,7 +5,7 @@ set -o errexit
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12'
+MUNIN_PLUGIN_VERSION='0.12.2'
 MUNIN_PLUGINS="
 	cert_expire
 	cputime
@@ -41,6 +41,10 @@ curl -L https://download.qutic.com/src/munin-plugins/smartos-munin-plugins-${MUN
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+# get latest updates
+pkgin update
+pkgin upgrade
 
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*
