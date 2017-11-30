@@ -4,7 +4,7 @@ This repository is based on [Joyent mibe](https://github.com/joyent/mibe).
 
 ## description
 
-Basic qutic.io mibe image with default setup of infrastructure services like
+Basic qutic mibe image with default setup of infrastructure services like
 munin and remote syslog. This should be the default image for all qutic zones.
 
 ## mdata variables
@@ -52,3 +52,46 @@ Configure ssh public and private key pairs for the host daemon via `mdata`.
 - `ssh_host_rsa_key.pub`: public SSH rsa key
 - `ssh_host_dsa_key`:     private SSH dsa key
 - `ssh_host_dsa_key.pub`: public SSH dsa key
+
+## installation
+
+The following sample can be used to create a zone running a copy of the the qutic-base image.
+
+```
+BASE_IMAGE_UUID=$(imgadm list | grep 'qutic-base-64' | tail -1 | awk '{ print $1 }')
+vmadm create << EOF
+{
+  "brand":      "joyent",
+  "image_uuid": "$BASE_IMAGE_UUID",
+  "alias":      "dsapid-server",
+  "hostname":   "base.example.com",
+  "dns_domain": "example.com",
+  "resolvers": [
+    "80.80.80.80",
+    "80.80.81.81"
+  ],
+  "nics": [
+    {
+      "interface": "net0",
+      "nic_tag":   "admin",
+      "ip":        "10.10.10.10",
+      "gateway":   "10.10.10.1",
+      "netmask":   "255.255.255.0"
+    }
+  ],
+  "max_physical_memory": 1024,
+  "max_swap":            1024,
+  "quota":                 10,
+  "cpu_cap":              100,
+  "customer_metadata": {
+    "admin_authorized_keys": "your-long-key",
+    "root_authorized_keys":  "your-long-key",
+    "mail_smarthost":        "mail.qutic.com",
+    "mail_auth_user":        "your-name@example.com",
+    "mail_auth_pass":        "smtp-account-password",
+    "mail_adminaddr":        "report@example.com",
+    "munin_master_allow":    "munin-master-ip"
+  }
+}
+EOF
+```
