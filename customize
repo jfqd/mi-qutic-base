@@ -5,7 +5,7 @@ set -o errexit
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.2'
+MUNIN_PLUGIN_VERSION='0.12.3'
 MUNIN_PLUGINS="
 	cert_expire
 	cputime
@@ -48,6 +48,34 @@ pkgin upgrade
 
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*
+
+# bash extensions
+cat >> /etc/skel/.bashrc << EOF
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+alias la="ls -al"
+alias t="cd /var/log/ && tail -n 50 -f "
+alias msg="/usr/bin/tail -n 50 -f /var/adm/messages"
+LANG=en_US.UTF-8
+LANGUAGE=en_US.UTF-8
+LC_MONETARY=de_DE.UTF-8
+LC_TIME=de_DE.UTF-8
+LC_CTYPE=de_DE.UTF-8
+LC_NUMERIC=de_DE.UTF-8
+LC_MESSAGES=C
+EDITOR=nano
+HISTSIZE=2000
+HISTFILESIZE=25000
+HISTTIMEFORMAT="[%d.%m.%Y %T] "
+EOF
+
+# nanorc extensions
+cat >> /opt/local/etc/nanorc << EOF
+include "/opt/local/share/nano/ruby.nanorc"
+include "/opt/local/share/nano/sh.nanorc"
+include "/opt/local/share/nano/nanorc.nanorc"
+include "/opt/local/share/nano/html.nanorc"
+include "/opt/local/share/nano/css.nanorc"
+EOF
 
 echo "* Cleaning up."
 rm -rf /root/*

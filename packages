@@ -10,10 +10,10 @@ p5-Switch
 spiped
 # dtrace
 dtracetools
-# letsencrypt
-py35-certbot
+curl
 sudo
 gsed
+nullmailer
 # grep required to work with sm- commands
 grep
 # elk

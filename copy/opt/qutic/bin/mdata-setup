@@ -1,5 +1,5 @@
 #!/bin/bash
-# source all files from /opt/qutic/var/mdata-setup/includes/*.sh
+# source all files from /opt/qutic/var/mdata-setup/includes/*.sh
 # we recommend a order by NUMBER-scriptname.sh
 
 PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
@@ -9,9 +9,9 @@ export PATH
 MDATA_SETUP_INC='/opt/qutic/var/mdata-setup/includes'
 
 if [ -d "${MDATA_SETUP_INC}" ]; then
-	for FILE in ${MDATA_SETUP_INC}/*.sh; do
-		if [ -r "${FILE}" ]; then
-			source ${FILE}
-		fi
-	done
+  for FILE in ${MDATA_SETUP_INC}/*.sh; do
+    if [ -r "${FILE}" ]; then
+      source ${FILE}
+    fi
+  done
 fi
