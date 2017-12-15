@@ -37,7 +37,7 @@ echo "* Create munin template file that will be used during mdata setup"
 cp /opt/local/etc/munin/munin-node.conf /opt/local/etc/munin/munin-node.conf.tpl
 
 echo "* Download and install community munin plugins (overwrite all other plugins)"
-curl -L https://download.qutic.com/src/munin-plugins/smartos-munin-plugins-${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
+curl -L -s https://github.com/jfqd/smartos-munin-plugins/archive/v${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
