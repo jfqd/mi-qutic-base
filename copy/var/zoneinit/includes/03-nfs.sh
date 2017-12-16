@@ -9,7 +9,10 @@ EOF
   # mount directory
   # TODO: handle multiple lines
   MOUNTPOINT=$(/usr/bin/echo "$VFSTAB" | /usr/bin/awk '{print $3}')
-  [ -n "$MOUNTPOINT" ] && /usr/sbin/mount "$MOUNTPOINT"
+  if [ -n "$MOUNTPOINT" ]; then
+    /usr/bin/mkdir -p "$MOUNTPOINT"
+    /usr/sbin/mount "$MOUNTPOINT"
+  fi
 
   /usr/sbin/svcadm enable svc:/network/rpc/bind
   /usr/sbin/svcadm enable svc:/network/nfs/client
