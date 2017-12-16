@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.3.3
+
+* handle vfstab extensions
+
 ## 17.3.2
 
 * include unbound-plugin for munin

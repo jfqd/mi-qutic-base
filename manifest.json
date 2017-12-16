@@ -1,6 +1,6 @@
 {
   "name":         "qutic-base-64",
-  "version":      "17.3.2",
+  "version":      "17.3.3",
   "description":  "qutic base-64 image",
   "organization": "qutic development",
   "brand":        "Instance",
@@ -20,6 +20,7 @@
     "ssh_host_rsa_key.pub":  {"type": "text", "description": "public SSH rsa key for the host daemon"},
     "ssh_host_dsa_key":      {"type": "text", "description": "private SSH dsa key for the host daemon"},
     "ssh_host_dsa_key.pub":  {"type": "text", "description": "public SSH dsa key for the host daemon"},
-    "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"}
+    "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
+    "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"}
   }
 }

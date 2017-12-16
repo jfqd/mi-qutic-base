@@ -78,7 +78,8 @@ include "/opt/local/share/nano/css.nanorc"
 EOF
 
 echo "* Cleaning up."
-rm -rf /root/*
+cp /etc/skel/.bashrc /root/.bashrc
+history -c
 
 # Provide workaround for /.zonecontrol/metadata.sock issue
 # https://github.com/joyent/smtools/issues/3
