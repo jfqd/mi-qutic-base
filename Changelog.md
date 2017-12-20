@@ -1,5 +1,10 @@
 # Changelog
 
+## 17.3.4
+
+* ensure directory for mountpoint exists
+* add syslog.conf and ipf.conf
+
 ## 17.3.3
 
 * handle vfstab extensions
