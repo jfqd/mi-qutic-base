@@ -77,6 +77,13 @@ include "/opt/local/share/nano/html.nanorc"
 include "/opt/local/share/nano/css.nanorc"
 EOF
 
+echo "* Create missing log-files"
+touch /var/log/mail.log
+touch /var/log/ipf.log
+
+# echo "* Enable ipfilter"
+# svcadm enable svc:/network/ipfilter:default
+
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 history -c
