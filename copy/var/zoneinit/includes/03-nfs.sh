@@ -17,3 +17,5 @@ EOF
   /usr/sbin/svcadm enable svc:/network/rpc/bind
   /usr/sbin/svcadm enable svc:/network/nfs/client
 fi
+
+exit 0
