@@ -8,8 +8,6 @@ p5-LWP-UserAgent-Determined
 p5-Switch
 # spiped
 spiped
-# dtrace
-dtracetools
 curl
 sudo
 gsed
