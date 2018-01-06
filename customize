@@ -80,12 +80,16 @@ EOF
 echo "* Create missing log-files"
 touch /var/log/mail.log
 touch /var/log/ipf.log
+touch /var/log/auth.log
+rm /var/log/authlog
+rm /var/log/maillog
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
 
 echo "* load startup.xml"
 /usr/sbin/svccfg import /svc/manifest/site/startup.xml
+svcadm enable svc:/site/startup:default
 
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
