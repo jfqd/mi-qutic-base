@@ -29,10 +29,11 @@ LogLevel INFO
 
 # Authentication:
 
-#LoginGraceTime 2m
-PermitRootLogin yes
+LoginGraceTime 60
+PermitRootLogin no
 StrictModes yes
-MaxAuthTries 6
+MaxAuthTries 3
+MaxAuthTriesLog 3
 #MaxSessions 10
 
 #RSAAuthentication yes
@@ -88,3 +89,5 @@ Subsystem sftp internal-sftp
 
 # Enable Joyent smartlogin
 PubKeyPlugin libsmartsshd.so
+
+# AllowGroups sshlogin

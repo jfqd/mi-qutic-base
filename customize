@@ -84,6 +84,9 @@ touch /var/log/ipf.log
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
 
+echo "* load startup.xml"
+/usr/sbin/svccfg import /svc/manifest/site/startup.xml
+
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 history -c

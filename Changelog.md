@@ -1,5 +1,12 @@
 # Changelog
 
+## 17.4.0
+
+* use pkgsrc 2017Q4
+* add nagios-nrpe and plugins
+* include startup-script
+* first-time fetch of pkg-vulnerabilities
+
 ## 17.3.4
 
 * ensure directory for mountpoint exists
