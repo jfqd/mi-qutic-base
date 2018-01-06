@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-VFSTAB=$(mdata-get vfstab 2>/dev/null)
-if [[ -n "$VFSTAB" ]]; then
+if mdata-get vfstab 1>/dev/null 2>&1; then
+  VFSTAB=$(mdata-get vfstab)
   # extend vfstab
   /usr/bin/cat >> /etc/vfstab << EOF
 $VFSTAB
@@ -13,9 +13,7 @@ EOF
     /usr/bin/mkdir -p "$MOUNTPOINT"
     /usr/sbin/mount "$MOUNTPOINT"
   fi
-
+  
   /usr/sbin/svcadm enable svc:/network/rpc/bind
   /usr/sbin/svcadm enable svc:/network/nfs/client
 fi
-
-exit 0
