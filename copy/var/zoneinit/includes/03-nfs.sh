@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-VFSTAB=$(mdata-get vfstab)
-if [ -n "$VFSTAB" ]; then
+VFSTAB=$(mdata-get vfstab 2>/dev/null)
+if [[ -n "$VFSTAB" ]]; then
   # extend vfstab
   /usr/bin/cat >> /etc/vfstab << EOF
 $VFSTAB
