@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # sleep a while
-sleep 60
+sleep 10
 
 # are all volumes mounted?
 for MOUNTPOINT in $(/usr/bin/cat /etc/vfstab | /usr/bin/grep ' yes ' | /usr/bin/awk '{print $3}'); do

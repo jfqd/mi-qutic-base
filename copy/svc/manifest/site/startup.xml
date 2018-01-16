@@ -15,7 +15,7 @@ This manifest starts a script after a restart
       <service_fmri value="svc:/milestone/network"/>
     </dependency>
     <!-- Script to run goes here -->
-    <exec_method type="method" name="start" exec="/usr/bin/bash /opt/qutic/bin/startup" timeout_seconds="600"/>
+    <exec_method type="method" name="start" exec="/opt/qutic/bin/startup" timeout_seconds="600"/>
     <exec_method type="method" name="stop" exec=":kill" timeout_seconds="120"/>
     <!-- This bit makes it run ONCE and makes sure it is NOT restarted! -->
     <property_group name="startd" type="framework">
