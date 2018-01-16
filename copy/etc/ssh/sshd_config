@@ -33,7 +33,6 @@ LoginGraceTime 60
 PermitRootLogin no
 StrictModes yes
 MaxAuthTries 3
-MaxAuthTriesLog 3
 #MaxSessions 10
 
 #RSAAuthentication yes
