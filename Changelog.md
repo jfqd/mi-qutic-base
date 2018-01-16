@@ -1,5 +1,10 @@
 # Changelog
 
+## 17.4.1
+
+* fix startup script
+* fix nfs
+
 ## 17.4.0
 
 * use pkgsrc 2017Q4
