@@ -46,6 +46,11 @@ echo "* Activate munin plugins"
 pkgin update
 pkgin upgrade
 
+mkdir -p /root/.gnupg
+chmod 0700 /root/.gnupg
+echo "keyserver pgp.mit.edu" > /root/.gnupg/gpg.conf
+chmod 0600 /root/.gnupg/gpg.conf
+
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*
 
