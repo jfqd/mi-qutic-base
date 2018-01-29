@@ -10,6 +10,7 @@ spiped
 curl
 sudo
 gsed
+gnupg
 nullmailer
 # grep required to work with sm- commands
 grep
