@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.4.2
+
+* increase munin-plugin version
+* add hardening script
+* fix gnupg
+
 ## 17.4.1
 
 * fix startup script

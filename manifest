@@ -1,7 +1,7 @@
 name="qutic-base-64"
 organization="qutic development"
 brand="Instance"
-version="17.4.1"
+version="17.4.2"
 description="qutic base image"
 homepage="https://github.com/jfqd/mi-qutic-base"
 users="root admin"
