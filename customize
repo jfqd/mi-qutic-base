@@ -44,7 +44,7 @@ echo "* Activate munin plugins"
 
 # get latest updates
 pkgin update
-pkgin upgrade
+pkgin -y upgrade
 
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg
@@ -88,6 +88,11 @@ touch /var/log/ipf.log
 touch /var/log/auth.log
 rm /var/log/authlog
 rm /var/log/maillog
+
+gsed -i \
+     -e 's:authlog:auth.log:' \
+     -e 's:maillog:mail.log:' \
+     /etc/logadm.conf
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
