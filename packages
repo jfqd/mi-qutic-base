@@ -12,6 +12,7 @@ sudo
 gsed
 gnupg
 nullmailer
+nicstat
 # grep required to work with sm- commands
 grep
 # elk

@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+HOSTNAME=$(/usr/bin/hostname)
+INTERFACES=$(/usr/sbin/ifconfig -a | awk '{print $1}' | grep ":" | awk -F':' '{print $1}' | sort -u | grep -v "^lo0" | grep -v "tun")
+
+for i in $INTERFACES
+do
+  OBYTES="`/usr/bin/kstat -p -c net -n $i -s obytes64 | awk '{print $2}'`"
+  RBYTES="`/usr/bin/kstat -p -c net -n $i -s rbytes64 | awk '{print $2}'`"
+  SNAPTIME="`date +%Y%m%d-%H%M%S`"
+  echo "${HOSTNAME},${i},${SNAPTIME},${OBYTES},${RBYTES}" >> /var/log/net-traffic
+done
