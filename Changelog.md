@@ -1,5 +1,13 @@
 # Changelog
 
+## 17.4.3
+
+* switch to qutic pkgsrc mirror
+* include keyring file with qutic pub key
+* add traffic collection script
+* add a restore option to startup script
+* include smf-health-check
+
 ## 17.4.2
 
 * increase munin-plugin version
