@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+PROCESSES=$(/usr/bin/svcs -a -H -o state,fmri | /usr/bin/grep maintenance | /usr/bin/awk '{ print $2 }')
+
+for process in $PROCESSES; do
+  /usr/sbin/svcadm clear "$process"
+done
+
+exit 0
