@@ -4,6 +4,9 @@ set -o errexit
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
+# nagios plugins
+NAGIOS_PLUGIN_VERSION='0.1.0'
+
 # Munin plugins
 MUNIN_PLUGIN_VERSION='0.12.5'
 MUNIN_PLUGINS="
@@ -31,6 +34,11 @@ gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositori
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
 pkg_admin rebuild
 pkgin -y up
+
+# NRPE
+echo "* Download and install community nagios plugins"
+curl -L -s https://github.com/jfqd/smartos-nagios-plugins/archive/v${NAGIOS_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/libexec/nagios --strip-components=1
+rm /opt/local/libexec/nagios/.gitignore /opt/local/libexec/nagios/README.md
 
 ## MUNIN
 echo "* Create munin template file that will be used during mdata setup"

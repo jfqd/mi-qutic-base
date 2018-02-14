@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.4.4
+
+* include nrpe with config
+
 ## 17.4.3
 
 * switch to qutic pkgsrc mirror
