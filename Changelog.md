@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.4.5
+
+* add beaver
+
 ## 17.4.4
 
 * include nrpe with config
