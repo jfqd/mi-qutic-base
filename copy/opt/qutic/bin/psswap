@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+#
+# Show used swap-space per process
+#
+(cd /proc ; for i in *; do SWAP=`pmap -S $i 2>/dev/null | grep total | awk '{ print $3; }'`; [[ ! -z "$SWAP" ]] && echo "$SWAP kbytes `ps -p $i -o comm=` ($i)"; done | sort -n)
