@@ -1,5 +1,10 @@
 # Changelog
 
+## 17.4.6
+
+* add a script to list swap-space per process
+* increase MUNIN_PLUGIN_VERSION
+
 ## 17.4.5
 
 * add beaver
