@@ -110,8 +110,8 @@ pip install beaver
 touch /var/log/beaver.log
 chown nobody:nobody /var/log/beaver.log
 
-# svccfg import /opt/qutic/lib/svc/manifest/beaver.xml
-# svcadm enable beaver
+mkdir -p /var/log/nullmailer
+ln -nfs /var/svc/log/pkgsrc-nullmailer:default.log /var/log/nullmailer/mail.log
 
 echo "* load startup.xml"
 /usr/sbin/svccfg import /svc/manifest/site/startup.xml
