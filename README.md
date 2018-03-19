@@ -91,8 +91,14 @@ vmadm create << EOF
     "mail_auth_pass":        "smtp-account-password",
     "mail_adminaddr":        "report@example.com",
     "munin_master_allow":    "munin-master-ip",
+    "nagios_allow":          "nagios-master-ip",
+    "logstash_redis":        "redis://10.10.10.20:6379/0,redis://10.10.10.21:6379/0",
     "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr"
   }
 }
 EOF
 ```
+
+## todo
+
+* config and start beaver
