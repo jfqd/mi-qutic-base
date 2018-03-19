@@ -3,7 +3,9 @@
 ## 17.4.6
 
 * add a script to list swap-space per process
+* add a script to list open-files per process
 * increase MUNIN_PLUGIN_VERSION
+* add logstash-redis config for beaver
 
 ## 17.4.5
 
