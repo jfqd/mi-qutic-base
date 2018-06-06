@@ -1,5 +1,12 @@
 # Changelog
 
+
+## 18.1.0
+
+* use pkgsrc 2018Q1
+* do not use qutic mirror for now
+* update munin-plugin version
+
 ## 17.4.6
 
 * add a script to list swap-space per process

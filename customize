@@ -8,7 +8,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 NAGIOS_PLUGIN_VERSION='0.1.0'
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.8'
+MUNIN_PLUGIN_VERSION='0.12.9'
 MUNIN_PLUGINS="
 	cert_expire
 	cputime
@@ -30,9 +30,9 @@ MUNIN_PLUGINS="
 "
 
 echo "* Use the qutic pkgsrc mirror"
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
-pkg_admin rebuild
+# gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
+# gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
+# pkg_admin rebuild
 pkgin -y up
 
 # NRPE
