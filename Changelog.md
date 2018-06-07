@@ -1,10 +1,9 @@
 # Changelog
 
 
-## 18.1.0
+## 17.4.7
 
-* use pkgsrc 2018Q1
-* do not use qutic mirror for now
+* stay on 2017Q4
 * update munin-plugin version
 
 ## 17.4.6
