@@ -1,6 +1,10 @@
 # Changelog
 
 
+## 18.1.0
+
+* use pkgsrc 2018Q1
+
 ## 17.4.7
 
 * stay on 2017Q4
