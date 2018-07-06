@@ -1,5 +1,8 @@
 # Changelog
 
+## 18.2.0
+
+* use pkgsrc 2018Q2
 
 ## 18.1.0
 
