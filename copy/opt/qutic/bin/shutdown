@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+# backup settings
+[[ -x /data/bin/backup ]] && /data/bin/backup || true
+
+# bye
+exit 0
