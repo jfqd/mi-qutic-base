@@ -1,11 +1,4 @@
-#!/bin/bash
-
-# Get internal ip of vm
-IP_INTERNAL=$(mdata-get sdc:nics | /usr/bin/json -ag ip -c 'this.nic_tag === "admin"' 2>/dev/null);
-# Workaround for using DHCP so IP_INTERNAL is empty
-if [[ -z "${IP_INTERNAL}" ]]; then
-  IP_INTERNAL="127.0.0.1"
-fi
+#!/usr/bin/bash
 
 # Configure nrpe allowed connections
 if mdata-get nagios_allow 1>/dev/null 2>&1; then

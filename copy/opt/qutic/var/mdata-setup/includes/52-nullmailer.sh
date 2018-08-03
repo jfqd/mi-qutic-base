@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 if mdata-get mail_smarthost 1>/dev/null 2>&1; then
 	echo "$(hostname)" > /opt/local/etc/nullmailer/me
 
@@ -11,4 +11,5 @@ if mdata-get mail_smarthost 1>/dev/null 2>&1; then
 		AUTH="--user=$(mdata-get mail_auth_user) --pass=$(mdata-get mail_auth_pass)"
 	fi
 	echo "$(mdata-get mail_smarthost) smtp --ssl $AUTH" > /opt/local/etc/nullmailer/remotes
+	chmod 0640 /opt/local/etc/nullmailer/remotes
 fi

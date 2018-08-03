@@ -1,23 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
-<!--
-This manifest starts a script after a restart
--->
 <service_bundle type="manifest" name="startup">
-  <!--Script name goes here too-->
   <service name="site/startup" type="service" version="1">
     <create_default_instance enabled="false"/>
     <single_instance/>
-    <!-- If your script needs to run after a certain milestone has been met
-         you can specify that here, otherwise delete this bit.
-         Replace value for milestone you need to meet -->
     <dependency name="milestone" grouping="require_all" restart_on="none" type="service">
       <service_fmri value="svc:/milestone/network"/>
     </dependency>
-    <!-- Script to run goes here -->
     <exec_method type="method" name="start" exec="/opt/qutic/bin/startup" timeout_seconds="600"/>
     <exec_method type="method" name="stop" exec="/opt/qutic/bin/shutdown" timeout_seconds="120"/>
-    <!-- This bit makes it run ONCE and makes sure it is NOT restarted! -->
     <property_group name="startd" type="framework">
       <propval name="duration" type="astring" value="transient"/>
     </property_group>

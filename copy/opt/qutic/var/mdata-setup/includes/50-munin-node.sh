@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # Configure munin-node allowed connections
 
 MUNIN_CONF='/opt/local/etc/munin/munin-node.conf'
