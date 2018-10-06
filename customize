@@ -88,6 +88,7 @@ include "/opt/local/share/nano/sh.nanorc"
 include "/opt/local/share/nano/nanorc.nanorc"
 include "/opt/local/share/nano/html.nanorc"
 include "/opt/local/share/nano/css.nanorc"
+include "/opt/local/share/nano/javascript.nanorc"
 EOF
 
 echo "* Create missing log-files"
