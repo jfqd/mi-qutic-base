@@ -8,6 +8,7 @@
 * send weekly upgrade hin emails
 * add ssl-generator script
 * add backup option on shutdown
+* secure nullmailer config
 
 ## 18.2.0
 
