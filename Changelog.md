@@ -1,5 +1,14 @@
 # Changelog
 
+## 18.3.0
+
+* use pkgsrc 2018Q3
+* fix cronjobs script
+* update munin-plugin version
+* send weekly upgrade hin emails
+* add ssl-generator script
+* add backup option on shutdown
+
 ## 18.2.0
 
 * use pkgsrc 2018Q2
