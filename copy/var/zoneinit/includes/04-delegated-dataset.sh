@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 UUID=$(mdata-get sdc:uuid)
 DDS=zones/${UUID}/data
 
