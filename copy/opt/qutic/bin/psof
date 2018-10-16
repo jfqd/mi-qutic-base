@@ -2,4 +2,8 @@
 #
 # Show number of open files per process
 #
-(cd /proc ; for i in *; do OF=`pfiles $i 2>/dev/null | nawk '/[0-9]: /{a++}END{print a}'`; [[ ! -z "$OF" ]] && echo "$OF files `ps -p $i -o comm=` $i"; done | sort -n)
+if [[ "$1" = "--count" ]]; then
+  (cd /proc ; NUMOF=0 ; for i in *; do OF=`pfiles $i 2>/dev/null | nawk '/[0-9]: /{a++}END{print a}'`; [[ ! -z "$OF" ]] && NUMOF=$(( $NUMOF + $OF )); done; echo "$NUMOF open files")
+else
+  (cd /proc ; for i in *; do OF=`pfiles $i 2>/dev/null | nawk '/[0-9]: /{a++}END{print a}'`; [[ ! -z "$OF" ]] && echo "$OF files `ps -p $i -o comm=` $i"; done | sort -n)
+fi
