@@ -5,7 +5,7 @@ set -o errexit
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
 # nagios plugins
-NAGIOS_PLUGIN_VERSION='0.1.0'
+NAGIOS_PLUGIN_VERSION='0.1.1'
 
 # Munin plugins
 MUNIN_PLUGIN_VERSION='0.12.11'
@@ -27,6 +27,7 @@ MUNIN_PLUGINS="
 	smf
 	tcp
 	udp
+	openfiles
 "
 
 echo "* Use the qutic pkgsrc mirror"
