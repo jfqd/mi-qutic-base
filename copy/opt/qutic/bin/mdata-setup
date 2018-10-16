@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # source all files from /opt/qutic/var/mdata-setup/includes/*.sh
 # we recommend a order by NUMBER-scriptname.sh
 
