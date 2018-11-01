@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # ensure base account-passwords
 gsed -i \
      -e 's#root:NP:#root:$5$n.gQ1n45$Fz52//LPBHKPiKZRu91HdnsCSipemrHzQqc84EFZWe8:#' \

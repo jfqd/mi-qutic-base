@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # create cronjob for ssl-expire script
 CRON='0 9 * * 1 /opt/qutic/bin/ssl-expire.sh
 0 0 * * * /opt/qutic/bin/traffic
