@@ -1,5 +1,12 @@
 # Changelog
 
+## 18.3.1
+
+* include openfiles munin-plugin
+* increase nagios-plugin version
+* ensure beaver service is running
+* move svc-notify to mdata-setup
+
 ## 18.3.0
 
 * use pkgsrc 2018Q3
