@@ -24,4 +24,4 @@ nagios-plugins
 py27-sqlite3
 py27-pip
 # always include ruby :)
-ruby24
+ruby25
