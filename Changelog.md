@@ -1,5 +1,10 @@
 # Changelog
 
+## 20181018.0
+
+* switch to pkgsrc trunk
+* add cronjob for log cleanup
+
 ## 18.3.1
 
 * include openfiles munin-plugin
