@@ -1,7 +1,7 @@
 # for not vim users
 nano
-munin-common-2.0.30
-munin-node-2.0.30
+# munin-common-2.0.30
+# munin-node-2.0.30
 p5-Net-CIDR
 p5-LWP-UserAgent-Determined
 p5-Switch
