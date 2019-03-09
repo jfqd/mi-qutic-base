@@ -42,8 +42,8 @@ mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # fix munin
-pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-common-2.0.30
-pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-node-2.0.30
+pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-common-2.0.30 || true
+pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-node-2.0.30   || true
 
 # NRPE
 echo "* Download and install community nagios plugins"
