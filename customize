@@ -36,9 +36,14 @@ gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
 pkg_admin rebuild
 pkgin -y up
 
+# import key
+rm /opt/local/etc/gnupg/pkgsrc.gpg || true
+mkdir -p /opt/local/etc/gnupg || true
+curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
+
 # fix missing munin v2.0.30 in trunk
-pkg_add http://pkgsrc.smartos.skylime.net/packages/SmartOS/trunk/x86_64/All/munin-common-2.0.30.tgz
-pkg_add http://pkgsrc.smartos.skylime.net/packages/SmartOS/trunk/x86_64/All/munin-node-2.0.30.pkg
+pkg_add https://download.qutic.com/extras/munin-common-2.0.30.tgz
+pkg_add https://download.qutic.com/extras/munin-node-2.0.30.tgz
 
 # NRPE
 echo "* Download and install community nagios plugins"
