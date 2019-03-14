@@ -25,3 +25,14 @@ py27-sqlite3
 py27-pip
 # always include ruby :)
 ruby25
+# munin dependencies (can be removed if munin is trunk!)
+p5-Exporter-Tiny
+p5-List-MoreUtils
+p5-Net-Server
+p5-Time-HiRes
+p5-CPAN-Meta
+p5-Module-Build
+p5-Net-SSLeay
+p5-IO-Socket-INET6
+p5-List-MoreUtils
+p5-Socket6
