@@ -33,8 +33,8 @@ MUNIN_PLUGINS="
 echo "* Use the qutic pkgsrc mirror"
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
-pkg_admin rebuild
-pkgin -y up
+pkg_admin rebuild || true
+pkgin -y up || true
 
 # import key
 rm /opt/local/etc/gnupg/pkgsrc.gpg || true
@@ -42,8 +42,8 @@ mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # fix munin
-pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-common-2.0.30 || true
-pkg_add https://pkgsrc.qutic.com/packages/SmartOS/trunk/x86_64/All/munin-node-2.0.30   || true
+pkg_add https://download.qutic.com/extras/munin-common-2.0.30.tgz || true
+pkg_add https://download.qutic.com/extras/munin-node-2.0.30.tgz   || true
 
 # NRPE
 echo "* Download and install community nagios plugins"
