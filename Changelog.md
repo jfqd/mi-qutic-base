@@ -1,5 +1,9 @@
 # Changelog
 
+## 20181018.1
+
+* download munin from extras
+
 ## 20181018.0
 
 * switch to pkgsrc trunk
