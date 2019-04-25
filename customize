@@ -5,12 +5,12 @@ set -o errexit
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
 # nagios plugins
-NAGIOS_PLUGIN_VERSION='0.1.1'
+NAGIOS_PLUGIN_VERSION='0.1.2'
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.11'
+MUNIN_PLUGIN_VERSION='0.12.12'
 MUNIN_PLUGINS="
-	cert_expire
+	nullmailer
 	cputime
 	df
 	load
