@@ -1,5 +1,10 @@
 # Changelog
 
+## 20181018.2
+
+* update munin- and nagios-plugins
+* add a nullmailer check
+
 ## 20181018.1
 
 * download munin from extras
