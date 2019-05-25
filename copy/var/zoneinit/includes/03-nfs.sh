@@ -11,7 +11,7 @@ EOF
   MOUNTPOINT=$(/usr/bin/echo "$VFSTAB" | /usr/bin/awk '{print $3}')
   if [ -n "$MOUNTPOINT" ]; then
     /usr/bin/mkdir -p "$MOUNTPOINT"
-    /usr/sbin/mount "$MOUNTPOINT"
+    /usr/sbin/mount "$MOUNTPOINT" || true
   fi
   
   /usr/sbin/svcadm enable svc:/network/rpc/bind
