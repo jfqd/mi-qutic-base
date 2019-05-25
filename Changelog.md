@@ -1,5 +1,11 @@
 # Changelog
 
+## 20181018.3
+
+* add nagios check for sidekiq
+* add more munin-plugins
+* let mount not block provisioning
+
 ## 20181018.2
 
 * update munin- and nagios-plugins
