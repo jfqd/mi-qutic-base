@@ -8,7 +8,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 NAGIOS_PLUGIN_VERSION='0.1.3'
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.12'
+MUNIN_PLUGIN_VERSION='0.12.13'
 MUNIN_PLUGINS="
 	nullmailer
 	cputime
