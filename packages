@@ -13,6 +13,7 @@ gsed
 gnupg
 nullmailer
 nicstat
+tree
 # grep required to work with sm- commands
 grep
 # elk
