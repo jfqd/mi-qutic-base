@@ -1,5 +1,9 @@
 # Changelog
 
+## 20181018.4
+
+* use latest munin from trunk
+
 ## 20181018.3
 
 * add nagios check for sidekiq

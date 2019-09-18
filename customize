@@ -130,6 +130,7 @@ svcadm enable svc:/site/startup:default
 
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
+rm /root/customize
 history -c
 
 # Provide workaround for /.zonecontrol/metadata.sock issue
