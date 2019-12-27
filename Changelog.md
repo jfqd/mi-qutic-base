@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.0
+
+* use latest smartos image 20191127
+* cleanup mdata-store after zoneinit
+* switch openssl to 1.1.1
+
 ## 20181018.4
 
 * use latest munin from trunk
