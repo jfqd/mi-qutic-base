@@ -57,7 +57,7 @@ echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 # get latest updates
-pkgin update     || true
+pkgin update
 pkgin -y upgrade || true
 
 mkdir -p /root/.gnupg
