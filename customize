@@ -30,6 +30,11 @@ MUNIN_PLUGINS="
 	openfiles
 "
 
+echo "* Fix broken pkgin"
+cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
+ln -nfs /opt/local/lib/libcrypto.so.1.1 /opt/local/lib/libcrypto.so.1.0.0
+ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
+
 echo "* Use the qutic pkgsrc mirror"
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
@@ -57,6 +62,7 @@ echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 # get latest updates
+cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
 pkgin update
 pkgin -y upgrade || true
 

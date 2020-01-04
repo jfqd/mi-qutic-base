@@ -5,6 +5,7 @@
 * use latest smartos image 20191127
 * cleanup mdata-store after zoneinit
 * switch openssl to 1.1.1
+* fix pkgin mibe issue
 
 ## 20181018.4
 
