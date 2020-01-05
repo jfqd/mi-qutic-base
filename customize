@@ -31,6 +31,10 @@ MUNIN_PLUGINS="
 "
 
 echo "* Fix broken pkgin"
+# We need it because image version 20191127
+# still has openssl < 1.1.1 and pkgin 0.13.0.
+# Can be removed on the next smartos image
+# including openssl 1.1.1!
 cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
 ln -nfs /opt/local/lib/libcrypto.so.1.1 /opt/local/lib/libcrypto.so.1.0.0
 ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
