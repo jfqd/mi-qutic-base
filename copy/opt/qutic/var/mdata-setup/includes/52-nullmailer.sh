@@ -13,4 +13,10 @@ if mdata-get mail_smarthost 1>/dev/null 2>&1; then
 	echo "$(mdata-get mail_smarthost) smtp --ssl $AUTH" > /opt/local/etc/nullmailer/remotes
 	chown nullmail:nullmail /opt/local/etc/nullmailer/remotes
 	chmod 0640 /opt/local/etc/nullmailer/remotes
+
+	if [[ `svcs -H nullmailer |awk '{print $1}'` = "online" ]]; then
+		/usr/sbin/svcadm restart svc:/pkgsrc/nullmailer:default
+	else
+		/usr/sbin/svcadm enable svc:/pkgsrc/nullmailer:default
+	fi
 fi
