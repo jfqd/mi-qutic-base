@@ -73,6 +73,11 @@ pkgin -y upgrade || true
 # we may wanna use hexdump :)
 ln -nfs /usr/bin/xxd /opt/local/bin/hexdump
 
+# create zabbix log dir
+mkdir /var/log/zabbix/
+chown zabbix:zabbix /var/log/zabbix
+mkdir /nonexistent
+
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg
 echo "keyserver pgp.mit.edu" > /root/.gnupg/gpg.conf

@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.1
+
+* we may wanna use hexdump
+* ensure nullmailer got config changes
+* add zabbix-agent config
+
 ## 20191127.0
 
 * use latest smartos image 20191127
