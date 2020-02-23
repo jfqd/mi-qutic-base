@@ -73,10 +73,11 @@ pkgin -y upgrade || true
 # we may wanna use hexdump :)
 ln -nfs /usr/bin/xxd /opt/local/bin/hexdump
 
-# create zabbix log dir
-mkdir /var/log/zabbix/
-chown zabbix:zabbix /var/log/zabbix
+# create additional zabbix-folders
 mkdir /nonexistent
+mkdir -p /opt/local/etc/zabbix_agentd.conf.d
+mkdir -p /var/log/zabbix
+chown zabbix:zabbix /var/log/zabbix
 
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg

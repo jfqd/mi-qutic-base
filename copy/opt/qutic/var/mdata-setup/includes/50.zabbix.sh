@@ -14,7 +14,7 @@ if mdata-get zabbix_pski 1>/dev/null 2>&1; then
         -e "s|# TLSAccept=unencrypted|TLSAccept=psk" \
         -e "s|# TLSConnect=unencrypted|TLSConnect=psk|" \
         -e "s|# TLSPSKIdentity=|TLSPSKIdentity=${PSKI}|" \
-        -e "s|# TLSPSKFile=|TLSPSKFile=/etc/zabbix/zabbix_agentd.psk" \
+        -e "s|# TLSPSKFile=|TLSPSKFile=/opt/local/etc/zabbix_agentd.psk" \
         /opt/local/etc/zabbix_agentd.conf
 
   fi
