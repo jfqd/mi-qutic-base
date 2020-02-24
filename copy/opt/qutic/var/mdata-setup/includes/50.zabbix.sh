@@ -11,10 +11,10 @@ if mdata-get zabbix_pski 1>/dev/null 2>&1; then
     chown zabbix:zabbix /opt/local/etc/zabbix_agentd.psk
 
     sed -i \
-        -e "s|# TLSAccept=unencrypted|TLSAccept=psk" \
+        -e "s|# TLSAccept=unencrypted|TLSAccept=psk|" \
         -e "s|# TLSConnect=unencrypted|TLSConnect=psk|" \
         -e "s|# TLSPSKIdentity=|TLSPSKIdentity=${PSKI}|" \
-        -e "s|# TLSPSKFile=|TLSPSKFile=/opt/local/etc/zabbix_agentd.psk" \
+        -e "s|# TLSPSKFile=|TLSPSKFile=/opt/local/etc/zabbix_agentd.psk|" \
         /opt/local/etc/zabbix_agentd.conf
 
   fi
@@ -27,12 +27,12 @@ if mdata-get zabbix_server 1>/dev/null 2>&1; then
       -e "s|ServerActive=127.0.0.1|ServerActive=${ZABBIX_SERVER}|" \
       /opt/local/etc/zabbix_agentd.conf
 
-  HOSTNAME=$(/bin/hostname)
+  HOSTNAME=$(/usr/bin/hostname)
   sed -i \
       -e "s|# PidFile=/tmp/zabbix_agentd.pid|PidFile=/var/tmp/zabbix_agentd.pid|" \
       -e "s|LogFile=/tmp/zabbix_agentd.log|LogFile=/var/log/zabbix/zabbix_agentd.log|" \
       -e "s|Hostname=Zabbix server|Hostname=${HOSTNAME}|" \
-      -e "s|# Include=/opt/local/etc/zabbix_agentd.conf.d/*.conf|Include=/opt/local/etc/zabbix_agentd.conf.d/*.conf" \
+      -e 's|# Include=/opt/local/etc/zabbix_agentd.conf.d/$|Include=/opt/local/etc/zabbix_agentd.conf.d/|' \
       /opt/local/etc/zabbix_agentd.conf
 
   /usr/sbin/svcadm enable -r svc:/pkgsrc/zabbix:agent
