@@ -9,3 +9,5 @@ elif [[ "$1" = "--count" ]]; then
 else
   (cd /proc ; for i in *; do OF=`pfiles $i 2>/dev/null | nawk '/[0-9]: /{a++}END{print a}'`; [[ ! -z "$OF" ]] && echo "$OF files `ps -p $i -o comm=` $i"; done | sort -n)
 fi
+
+exit 0
