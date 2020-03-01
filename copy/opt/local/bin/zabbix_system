@@ -7,3 +7,5 @@ function zsend {
 }
 
 zsend system.openfiles $(/opt/qutic/bin/psof --count-numbers-only | /usr/bin/bc)
+
+exit 0

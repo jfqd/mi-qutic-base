@@ -74,7 +74,7 @@ pkgin -y upgrade || true
 ln -nfs /usr/bin/xxd /opt/local/bin/hexdump
 
 # create additional zabbix-folders
-mkdir /nonexistent
+# mkdir /nonexistent
 mkdir -p /opt/local/etc/zabbix_agentd.conf.d
 mkdir -p /var/log/zabbix
 chown zabbix:zabbix /var/log/zabbix
