@@ -1,5 +1,9 @@
 # Changelog
 
+## 20191127.2
+
+* move checks into zabbix_system script
+
 ## 20191127.1
 
 * we may wanna use hexdump
