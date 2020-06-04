@@ -8,7 +8,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 NAGIOS_PLUGIN_VERSION='0.1.4'
 
 # Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.13'
+MUNIN_PLUGIN_VERSION='0.12.14'
 MUNIN_PLUGINS="
 	nullmailer
 	cputime
@@ -51,9 +51,9 @@ mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # NRPE
-echo "* Download and install community nagios plugins"
-curl -L -s https://github.com/jfqd/smartos-nagios-plugins/archive/v${NAGIOS_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/libexec/nagios --strip-components=1
-rm /opt/local/libexec/nagios/.gitignore /opt/local/libexec/nagios/README.md
+# echo "* Download and install community nagios plugins"
+# curl -L -s https://github.com/jfqd/smartos-nagios-plugins/archive/v${NAGIOS_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/libexec/nagios --strip-components=1
+# rm /opt/local/libexec/nagios/.gitignore /opt/local/libexec/nagios/README.md
 
 ## MUNIN
 echo "* Create munin template file that will be used during mdata setup"
@@ -61,6 +61,7 @@ cp /opt/local/etc/munin/munin-node.conf /opt/local/etc/munin/munin-node.conf.tpl
 
 echo "* Download and install community munin plugins (overwrite all other plugins)"
 curl -L -s https://github.com/jfqd/smartos-munin-plugins/archive/v${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
+cp /opt/local/lib/munin/plugins/ps_ /opt/local/lib/munin/plugins/ps_.bak
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
