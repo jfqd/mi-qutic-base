@@ -3,6 +3,7 @@
 # upgrade system
 /opt/local/bin/pkgin up
 /opt/local/bin/pkgin -y ug
+/opt/local/bin/pkgin clean
 # fix common issues
 /opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
 /usr/sbin/svcadm restart nullmailer
