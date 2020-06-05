@@ -17,13 +17,13 @@ tree
 # grep required to work with sm- commands
 grep
 # elk
-# beats
+beats
 # nagios
 # nagios-nrpe
 # nagios-plugins
 # beaver
-# py27-sqlite3
-# py27-pip
+py27-sqlite3
+py27-pip
 # always include ruby :)
 ruby25
 zabbix
