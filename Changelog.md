@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.3
+
+* increase munin-plugin version
+* add easy update including common issue fixes
+* remove nagios support
+
 ## 20191127.2
 
 * move checks into zabbix_system script
