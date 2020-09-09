@@ -1,5 +1,13 @@
 # Changelog
 
+## 20191127.4
+
+* remove execution of zabbix-system for now
+* create nonexistent
+* ensure svcs repo-server restart on failure
+* update uptodate
+* add packages back in
+
 ## 20191127.3
 
 * increase munin-plugin version
