@@ -79,6 +79,7 @@ ln -nfs /usr/bin/xxd /opt/local/bin/hexdump
 mkdir -p /opt/local/etc/zabbix_agentd.conf.d
 mkdir -p /var/log/zabbix
 chown zabbix:zabbix /var/log/zabbix
+mkdir -p /nonexistent
 
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg
@@ -150,8 +151,11 @@ svcadm enable svc:/site/startup:default
 
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
+chmod 0640  /root/.bashrc
 rm /root/customize
 history -c
+rm /opt/local/bin/sm-install-drupal || true
+rm /opt/local/bin/sm-install-wordpress || true
 
 # Provide workaround for /.zonecontrol/metadata.sock issue
 # https://github.com/joyent/smtools/issues/3
