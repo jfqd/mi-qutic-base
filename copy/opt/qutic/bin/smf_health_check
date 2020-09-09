@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-PROCESSES=$(/usr/bin/svcs -a -H -o state,fmri | /usr/bin/grep maintenance | /usr/bin/awk '{ print $2 }')
+PROCESSES=$(/usr/bin/svcs -a -H -o state,fmri 2>&1 | /usr/bin/grep maintenance | /usr/bin/awk '{ print $2 }')
+
+if [[ $(echo $PROCESSES | grep "Could not bind to repository server" | wc -l) > 0 ]]; then
+  echo "Could not bind to repository server; try to get it back"
+  /lib/svc/bin/svc.configd
+  exit 1
+fi
 
 for process in $PROCESSES; do
   /usr/sbin/svcadm clear "$process"
