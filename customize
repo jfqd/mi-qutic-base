@@ -50,12 +50,7 @@ rm /opt/local/etc/gnupg/pkgsrc.gpg || true
 mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
-# NRPE
-# echo "* Download and install community nagios plugins"
-# curl -L -s https://github.com/jfqd/smartos-nagios-plugins/archive/v${NAGIOS_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/libexec/nagios --strip-components=1
-# rm /opt/local/libexec/nagios/.gitignore /opt/local/libexec/nagios/README.md
-
-## MUNIN
+## MUNIN: we still use plugins from munin for zabbix
 echo "* Create munin template file that will be used during mdata setup"
 cp /opt/local/etc/munin/munin-node.conf /opt/local/etc/munin/munin-node.conf.tpl
 
