@@ -18,9 +18,6 @@ tree
 grep
 # elk
 beats
-# nagios
-# nagios-nrpe
-# nagios-plugins
 # beaver
 py27-sqlite3
 py27-pip
