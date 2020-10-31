@@ -10,7 +10,7 @@ if mdata-get mail_smarthost 1>/dev/null 2>&1; then
 	   mdata-get mail_auth_pass 1>/dev/null 2>&1; then
 		AUTH="--user=$(mdata-get mail_auth_user) --pass=$(mdata-get mail_auth_pass)"
 	fi
-	echo "$(mdata-get mail_smarthost) smtp --ssl $AUTH" > /opt/local/etc/nullmailer/remotes
+	echo "$(mdata-get mail_smarthost) smtp --port=587 --starttls $AUTH" > /opt/local/etc/nullmailer/remotes
 	chown nullmail:nullmail /opt/local/etc/nullmailer/remotes
 	chmod 0640 /opt/local/etc/nullmailer/remotes
 
