@@ -101,4 +101,4 @@ EOF
 
 ## todo
 
-* config and start beaver
+* remove beaver and use beats

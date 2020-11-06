@@ -1,5 +1,12 @@
 # Changelog
 
+## 20191127.5
+
+* remove munin and nagios and add zabbix to firewall config
+* remove nagios plugins download
+* nullmailer should use port 587
+* cleanup packages file
+
 ## 20191127.4
 
 * remove execution of zabbix-system for now
