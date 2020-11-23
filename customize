@@ -144,6 +144,13 @@ echo "* load startup.xml"
 /usr/sbin/svccfg import /svc/manifest/site/startup.xml
 svcadm enable svc:/site/startup:default
 
+echo "* fix df command in sm-summary"
+# https://github.com/joyent/smtools/pull/5
+sed -i \
+    -e "s|df -B1 /tmp|df -k /tmp|" \
+    -e "s|/1024/1024|/1024|" \
+    /opt/local/bin/sm-summary
+
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 chmod 0640  /root/.bashrc
