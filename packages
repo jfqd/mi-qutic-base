@@ -22,5 +22,5 @@ beats
 py27-sqlite3
 py27-pip
 # always include ruby :)
-ruby25
+ruby26
 zabbix
