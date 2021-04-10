@@ -1,11 +1,15 @@
 # Changelog
 
+## 20191127.7
+
+* update ruby to 2.6
+* add change-cert script
+
 ## 20191127.6
 
 * fix df command in sm-summary
 * new script for password-creation
 * fixed ssl-expire script
-* update ruby to 2.6
 
 ## 20191127.5
 
