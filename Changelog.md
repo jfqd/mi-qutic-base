@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.6
+
+* fix df command in sm-summary
+* new script for password-creation
+* fixed ssl-expire script
+
 ## 20191127.5
 
 * remove munin and nagios and add zabbix to firewall config
