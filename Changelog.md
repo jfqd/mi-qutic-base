@@ -4,6 +4,7 @@
 
 * fix perl 5.34 update issues
 * remove nrpe fragments
+* build image on base 20201019
 
 ## 20191127.7
 

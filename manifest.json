@@ -5,7 +5,7 @@
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-base",
-  "base":         "82f637a0-10fd-11ea-a0b6-9b691fd17e86",
+  "base":         "9ad5a702-11e7-11eb-b237-3be202719561",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
