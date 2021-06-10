@@ -1,5 +1,10 @@
 # Changelog
 
+## 20191127.8
+
+* fix perl 5.34 update issues
+* remove nrpe fragments
+
 ## 20191127.7
 
 * update ruby to 2.6
