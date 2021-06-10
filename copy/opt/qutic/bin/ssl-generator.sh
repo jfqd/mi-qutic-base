@@ -46,7 +46,7 @@ ssl() {
 				echo "svcadm restart ${service}" >> ${le_home}renew-hook.sh
 		else
 			# Fallback to selfsigned ssl certificates
-			/opt/core/bin/ssl-selfsigned.sh -d ${ssl_home} -f ${filename}
+			/opt/qutic/bin/ssl-selfsigned.sh -d ${ssl_home} -f ${filename}
 		fi
 	fi
 }
