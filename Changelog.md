@@ -3,6 +3,7 @@
 ## 20201019.1
 
 * update ruby to 2.7
+* deactivate cronjobs
 
 ## 20201019.0
 
