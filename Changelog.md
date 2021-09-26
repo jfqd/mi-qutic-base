@@ -1,5 +1,9 @@
 # Changelog
 
+## 20201019.2
+
+* get latest trunk packages
+
 ## 20201019.1
 
 * update ruby to 2.7
