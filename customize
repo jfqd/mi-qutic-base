@@ -129,7 +129,13 @@ gsed -i \
 # svcadm enable svc:/network/ipfilter:default
 
 echo "* setup and load beaver"
-pip install beaver
+pip3.9 install hiredis
+(
+  git clone https://github.com/jfqd/python-beaver.git
+  cd python-beaver
+  python3.9 setup.py install || true
+)
+rm -rf python-beaver
 touch /var/log/beaver.log
 chown nobody:nobody /var/log/beaver.log
 

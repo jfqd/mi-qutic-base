@@ -19,8 +19,10 @@ grep
 # elk
 beats
 # beaver
-py27-sqlite3
-py27-pip
+py39-pip
+py39-sqlite3
+py39-msgpack
+hiredis
 # always include ruby :)
 ruby27
 zabbix
