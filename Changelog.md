@@ -1,5 +1,9 @@
 # Changelog
 
+## 20201019.3
+
+* use beaver with python 3.9
+
 ## 20201019.2
 
 * get latest trunk packages
