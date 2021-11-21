@@ -28,7 +28,7 @@
     </method_context>
 
     <exec_method type='method' name='start' exec='/opt/qutic/lib/svc/method/beaver start' timeout_seconds='60' />
-    <exec_method type='method' name='stop' exec='/opt/qutic/lib/svc/method/beaver stop' timeout_seconds='60' />
+    <exec_method type='method' name='stop' exec='/opt/qutic/lib/svc/method/beaver stop' timeout_seconds='10' />
 
     <stability value='Unstable' />
 
