@@ -23,6 +23,8 @@ py39-pip
 py39-sqlite3
 py39-msgpack
 hiredis
+gcc7
+gmake
 # always include ruby :)
 ruby27
 zabbix
