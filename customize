@@ -134,6 +134,7 @@ pip3.9 install Beaver-36.3.1-py39-none-any.whl
 pip3.9 install hiredis
 rm Beaver-36.3.1-py39-none-any.whl
 cp /opt/local/lib/python3.9/site-packages/Beaver-36.3.1.dist-info/scripts/beaver /opt/local/bin/beaver
+chmod +x /opt/local/bin/beaver
 touch /var/log/beaver.log
 chown nobody:nobody /var/log/beaver.log
 
