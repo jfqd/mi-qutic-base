@@ -98,7 +98,3 @@ vmadm create << EOF
 }
 EOF
 ```
-
-## todo
-
-* remove beaver and use beats

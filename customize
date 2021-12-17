@@ -125,16 +125,6 @@ gsed -i \
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
 
-echo "* setup and load beaver"
-curl -LOs https://download.qutic.com/src/beaver/Beaver-36.3.1-py39-none-any.whl
-pip3.9 install Beaver-36.3.1-py39-none-any.whl
-pip3.9 install hiredis
-rm Beaver-36.3.1-py39-none-any.whl
-cp /opt/local/lib/python3.9/site-packages/Beaver-36.3.1.dist-info/scripts/beaver /opt/local/bin/beaver
-chmod +x /opt/local/bin/beaver
-touch /var/log/beaver.log
-chown nobody:nobody /var/log/beaver.log
-
 echo "* link nullmailer log"
 mkdir -p /var/log/nullmailer
 ln -nfs /var/svc/log/pkgsrc-nullmailer:default.log /var/log/nullmailer/mail.log
@@ -154,7 +144,6 @@ sed -i \
     /opt/local/bin/sm-summary
 
 echo "* Cleaning up."
-pkgin -y rm gcc7 gmake
 cp /etc/skel/.bashrc /root/.bashrc
 chmod 0640  /root/.bashrc
 rm /root/customize
