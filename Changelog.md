@@ -1,5 +1,9 @@
 # Changelog
 
+## 20201019.4
+
+* remove beaver and use beats
+
 ## 20201019.3
 
 * use beaver with python 3.9
