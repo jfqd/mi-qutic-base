@@ -4,37 +4,14 @@ set -o errexit
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
-# Munin plugins
-MUNIN_PLUGIN_VERSION='0.12.14'
-MUNIN_PLUGINS="
-	nullmailer
-	cputime
-	df
-	load
-	uptime
-	users
-	proc_state
-	vfs_bytes
-	vfs_iops
-	vfs_latency
-	if_net0
-	pkg_audit
-	memory_cap
-	swap_cap
-	smf
-	tcp
-	udp
-	openfiles
-"
-
-echo "* Fix broken pkgin"
+# echo "* Fix broken pkgin"
 # We need it because image version 20191127
 # still has openssl < 1.1.1 and pkgin 0.13.0.
 # Can be removed on the next smartos image
 # including openssl 1.1.1!
-cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
-ln -nfs /opt/local/lib/libcrypto.so.1.1 /opt/local/lib/libcrypto.so.1.0.0
-ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
+# cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
+# ln -nfs /opt/local/lib/libcrypto.so.1.1 /opt/local/lib/libcrypto.so.1.0.0
+# ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
 
 echo "* Use the qutic pkgsrc mirror"
 gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
@@ -46,17 +23,6 @@ pkgin -y up || true
 rm /opt/local/etc/gnupg/pkgsrc.gpg || true
 mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
-
-## MUNIN: we still use plugins from munin for zabbix
-echo "* Create munin template file that will be used during mdata setup"
-cp /opt/local/etc/munin/munin-node.conf /opt/local/etc/munin/munin-node.conf.tpl
-
-echo "* Download and install community munin plugins (overwrite all other plugins)"
-curl -L -s https://github.com/jfqd/smartos-munin-plugins/archive/v${MUNIN_PLUGIN_VERSION}.tar.gz | gtar xz -C /opt/local/lib/munin/plugins --strip-components=1
-cp /opt/local/lib/munin/plugins/ps_ /opt/local/lib/munin/plugins/ps_.bak
-
-echo "* Activate munin plugins"
-/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 # get latest updates
 cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
@@ -87,6 +53,7 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 alias la="ls -al"
 alias t="cd /var/log/ && tail -n 50 -f "
 alias msg="/usr/bin/tail -n 50 -f /var/adm/messages"
+alias nano="/usr/bin/vim"
 LANG=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 LC_MONETARY=de_DE.UTF-8
@@ -94,20 +61,10 @@ LC_TIME=de_DE.UTF-8
 LC_CTYPE=de_DE.UTF-8
 LC_NUMERIC=de_DE.UTF-8
 LC_MESSAGES=C
-EDITOR=nano
+EDITOR=vim
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
-EOF
-
-# nanorc extensions
-cat >> /opt/local/etc/nanorc << EOF
-include "/opt/local/share/nano/ruby.nanorc"
-include "/opt/local/share/nano/sh.nanorc"
-include "/opt/local/share/nano/nanorc.nanorc"
-include "/opt/local/share/nano/html.nanorc"
-include "/opt/local/share/nano/css.nanorc"
-include "/opt/local/share/nano/javascript.nanorc"
 EOF
 
 echo "* Create missing log-files"
