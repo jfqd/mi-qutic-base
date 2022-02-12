@@ -5,7 +5,7 @@ This repository is based on [Joyent mibe](https://github.com/joyent/mibe).
 ## description
 
 Basic qutic mibe image with default setup of infrastructure services like
-munin and remote syslog. This should be the default image for all qutic zones.
+zabbix and remote syslog. This should be the default image for all qutic zones.
 
 ## mdata variables
 
@@ -29,13 +29,7 @@ support rsa keys.
 - `root_ssh_rsa`: private ssh rsa key for root user
 - `root_ssh_rsa_pub`: public ssh key for root user (mostly not required)
 
-### munin
-
-List of ip addresses of the munin master server that is allowed to connect. The ip addresses should be seperated by whitespace or newline.
-
-- `munin_master_allow`: ip addresses (alternative hostname) of the munin master node
-
-### postfix
+### nullmailer
 
 To have cron emails on errors we like to configure nullmailer as local smtp server.
 
@@ -90,8 +84,6 @@ vmadm create << EOF
     "mail_auth_user":        "you@example.com",
     "mail_auth_pass":        "smtp-account-password",
     "mail_adminaddr":        "report@example.com",
-    "munin_master_allow":    "munin-master-ip",
-    "nagios_allow":          "nagios-master-ip",
     "logstash_redis":        "redis://10.10.10.20:6379/0,redis://10.10.10.21:6379/0",
     "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr"
   }
