@@ -1,5 +1,12 @@
 # Changelog
 
+## 20201019.5
+
+* remove munin and use plugins directly
+* remove nano and use vim as editor
+* remove pkgin fix
+* renumber mdata-script
+
 ## 20201019.4
 
 * remove beaver and use beats
