@@ -54,6 +54,9 @@ alias la="ls -al"
 alias t="cd /var/log/ && tail -n 50 -f "
 alias msg="/usr/bin/tail -n 50 -f /var/adm/messages"
 alias nano="/usr/bin/vim"
+vw() {
+  /usr/bin/vim $(/usr/bin/which $1)
+}
 LANG=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 LC_MONETARY=de_DE.UTF-8
@@ -61,7 +64,7 @@ LC_TIME=de_DE.UTF-8
 LC_CTYPE=de_DE.UTF-8
 LC_NUMERIC=de_DE.UTF-8
 LC_MESSAGES=C
-EDITOR=vim
+EDITOR=/usr/bin/vim
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
@@ -73,6 +76,8 @@ touch /var/log/ipf.log
 touch /var/log/auth.log
 rm /var/log/authlog
 rm /var/log/maillog
+chmod 0640 /var/log/auth.log
+chmod 0640 /var/log/ipf.log
 
 gsed -i \
      -e 's:authlog:auth.log:' \
