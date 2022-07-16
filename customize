@@ -105,6 +105,11 @@ sed -i \
     -e "s|/1024/1024|/1024|" \
     /opt/local/bin/sm-summary
 
+echo "* pkgsrc mnx migration"
+curl -s https://download.qutic.com/src/pkgsrc/8254B861.asc | gpg --import --no-default-keyring --keyring /opt/local/etc/gnupg/pkgsrc.gpg
+pkg_add -U pkg_install pkgin libarchive
+pkgin clean
+
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 chmod 0640  /root/.bashrc
