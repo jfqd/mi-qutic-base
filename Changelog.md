@@ -1,5 +1,10 @@
 # Changelog
 
+## 20220708.0
+
+* use latest base image 20220708
+* pkgsrc mnx migration
+
 ## 20201019.5
 
 * remove munin and use plugins directly
