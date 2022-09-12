@@ -1,5 +1,9 @@
 # Changelog
 
+## 20220708.1
+
+* link pkgin log into place
+
 ## 20220708.0
 
 * use latest base image 20220708
