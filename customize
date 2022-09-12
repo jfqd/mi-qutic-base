@@ -39,6 +39,9 @@ mkdir -p /var/log/zabbix
 chown zabbix:zabbix /var/log/zabbix
 mkdir -p /nonexistent
 
+# link pkgin log into place
+ln -nfs /var/db/pkgin/pkg_install-err.log /var/log/pkg_install-err_log || true
+
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg
 echo "keyserver pgp.mit.edu" > /root/.gnupg/gpg.conf
@@ -114,7 +117,6 @@ echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 chmod 0640  /root/.bashrc
 rm /root/customize
-history -c
 rm /opt/local/bin/sm-install-drupal || true
 rm /opt/local/bin/sm-install-wordpress || true
 
@@ -122,6 +124,8 @@ rm /opt/local/bin/sm-install-wordpress || true
 # https://github.com/joyent/smtools/issues/3
 gsed -i 's:^rm -f /.zonecontrol/metadata.sock$:rm -f /.zonecontrol/metadata.sock || true:g' \
 	/opt/local/bin/sm-prepare-image
+
+history -c
 
 echo "* Prepare image"
 sm-prepare-image -y
