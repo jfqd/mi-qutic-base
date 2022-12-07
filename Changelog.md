@@ -1,5 +1,9 @@
 # Changelog
 
+## 20220708.3 - 2022-12-07
+
+* fix pkgrc uri sed 
+
 ## 20220708.2 - 2022-10-08
 
 * change smartos.org too
