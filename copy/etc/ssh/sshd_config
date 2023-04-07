@@ -89,4 +89,6 @@ Subsystem sftp internal-sftp
 # Enable Joyent smartlogin
 PubKeyPlugin libsmartsshd.so
 
+PubkeyAcceptedAlgorithms ^ssh-rsa
+
 # AllowGroups sshlogin

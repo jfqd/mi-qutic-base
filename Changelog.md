@@ -1,9 +1,28 @@
 # Changelog
 
-## 20230313.0 - 2023.04.07
+## 20230313.0 - 2023-04-07
 
 * build image on base 20230313
 * update ruby to 3.1
+
+## 20220708.3 - 2022-12-07
+
+* fix pkgrc uri sed 
+
+## 20220708.2 - 2022-10-08
+
+* change smartos.org too
+* allow rsa
+
+## 20220708.1
+
+* link pkgin log into place
+
+## 20220708.0
+
+* use latest base image 20220708
+* pkgsrc mnx migration
+>>>>>>> d1a0962c324898373d68e3605cfe3818ea03c8d8
 
 ## 20201019.5
 

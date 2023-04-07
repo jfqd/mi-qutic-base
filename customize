@@ -14,8 +14,11 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
 
 echo "* Use the qutic pkgsrc mirror"
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkgin/repositories.conf
-gsed -i 's:pkgsrc.joyent.com:pkgsrc.qutic.com:g' /opt/local/etc/pkg_install.conf
+gsed -i 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' /opt/local/etc/pkgin/repositories.conf
+gsed -i 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' /opt/local/etc/pkg_install.conf
+gsed -i 's|https://smartos.org|https://pkgsrc.qutic.com|g' /opt/local/etc/pkgin/repositories.conf
+gsed -i 's|https://smartos.org|https://pkgsrc.qutic.com|g' /opt/local/etc/pkg_install.conf
+
 pkg_admin rebuild || true
 pkgin -y up || true
 
@@ -38,6 +41,9 @@ mkdir -p /opt/local/etc/zabbix_agentd.conf.d
 mkdir -p /var/log/zabbix
 chown zabbix:zabbix /var/log/zabbix
 mkdir -p /nonexistent
+
+# link pkgin log into place
+ln -nfs /var/db/pkgin/pkg_install-err.log /var/log/pkg_install-err_log || true
 
 mkdir -p /root/.gnupg
 chmod 0700 /root/.gnupg
@@ -105,11 +111,15 @@ sed -i \
     -e "s|/1024/1024|/1024|" \
     /opt/local/bin/sm-summary
 
+echo "* pkgsrc mnx migration"
+curl -s https://download.qutic.com/src/pkgsrc/8254B861.asc | gpg --import --no-default-keyring --keyring /opt/local/etc/gnupg/pkgsrc.gpg
+pkg_add -U pkg_install pkgin libarchive
+pkgin clean
+
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
 chmod 0640  /root/.bashrc
 rm /root/customize
-history -c
 rm /opt/local/bin/sm-install-drupal || true
 rm /opt/local/bin/sm-install-wordpress || true
 
@@ -117,6 +127,8 @@ rm /opt/local/bin/sm-install-wordpress || true
 # https://github.com/joyent/smtools/issues/3
 gsed -i 's:^rm -f /.zonecontrol/metadata.sock$:rm -f /.zonecontrol/metadata.sock || true:g' \
 	/opt/local/bin/sm-prepare-image
+
+history -c
 
 echo "* Prepare image"
 sm-prepare-image -y
