@@ -1,5 +1,10 @@
 # Changelog
 
+## 20230313.0 - 2023.04.07
+
+* build image on base 20230313
+* update ruby to 3.1
+
 ## 20201019.5
 
 * remove munin and use plugins directly
