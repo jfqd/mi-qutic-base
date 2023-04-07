@@ -9,5 +9,5 @@ tree
 # grep required to work with sm- commands
 grep
 beats
-ruby27
+ruby31
 zabbix
