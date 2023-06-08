@@ -14,10 +14,17 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
 
 echo "* Use the qutic pkgsrc mirror"
-gsed -i 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' /opt/local/etc/pkgin/repositories.conf
-gsed -i 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' /opt/local/etc/pkg_install.conf
-gsed -i 's|https://smartos.org|https://pkgsrc.qutic.com|g' /opt/local/etc/pkgin/repositories.conf
-gsed -i 's|https://smartos.org|https://pkgsrc.qutic.com|g' /opt/local/etc/pkg_install.conf
+sed -i \
+  -e 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' \
+  -e 's|https://smartos.org|https://pkgsrc.qutic.com|g' \
+  -e 's|https://pkgsrc.smartos.org|https://pkgsrc.qutic.com|g' \
+  /opt/local/etc/pkgin/repositories.conf
+
+sed -i \
+  -e 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' \
+  -e 's|https://smartos.org|https://pkgsrc.qutic.com|g' \
+  -e 's|https://pkgsrc.smartos.org|https://pkgsrc.qutic.com|g' \
+  /opt/local/etc/pkg_install.conf
 
 pkg_admin rebuild || true
 pkgin -y up || true
