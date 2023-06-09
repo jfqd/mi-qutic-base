@@ -1,5 +1,10 @@
 # Changelog
 
+## 20230313.1 - 2023-06-08
+
+* ensure we use our mirror
+* add flag to sed
+
 ## 20230313.0 - 2023-04-07
 
 * build image on base 20230313
