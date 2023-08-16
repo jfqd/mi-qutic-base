@@ -1,5 +1,11 @@
 # Changelog
 
+## 20230313.2 - 2023-08-16
+
+* build with latest trunk packages
+* only change cert if box is online
+* restart filebeat on config change
+
 ## 20230313.1 - 2023-06-08
 
 * ensure we use our mirror
