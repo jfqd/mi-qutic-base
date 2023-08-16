@@ -35,7 +35,7 @@ mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # get latest updates
-cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
+# cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
 pkgin update
 pkgin -y upgrade || true
 
