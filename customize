@@ -4,30 +4,14 @@ set -o errexit
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
-# echo "* Fix broken pkgin"
-# We need it because image version 20191127
-# still has openssl < 1.1.1 and pkgin 0.13.0.
-# Can be removed on the next smartos image
-# including openssl 1.1.1!
-# cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
-# ln -nfs /opt/local/lib/libcrypto.so.1.1 /opt/local/lib/libcrypto.so.1.0.0
-# ln -nfs /opt/local/lib/libssl.so.1.1 /opt/local/lib/libssl.so.1.0.0
-
 echo "* Use the qutic pkgsrc mirror"
 sed -i \
-  -e 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' \
-  -e 's|https://smartos.org|https://pkgsrc.qutic.com|g' \
   -e 's|https://pkgsrc.smartos.org|https://pkgsrc.qutic.com|g' \
   /opt/local/etc/pkgin/repositories.conf
 
 sed -i \
-  -e 's|https://pkgsrc.joyent.com|https://pkgsrc.qutic.com|g' \
-  -e 's|https://smartos.org|https://pkgsrc.qutic.com|g' \
   -e 's|https://pkgsrc.smartos.org|https://pkgsrc.qutic.com|g' \
   /opt/local/etc/pkg_install.conf
-
-pkg_admin rebuild || true
-pkgin -y up || true
 
 # import key
 rm /opt/local/etc/gnupg/pkgsrc.gpg || true
@@ -35,8 +19,8 @@ mkdir -p /opt/local/etc/gnupg || true
 curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # get latest updates
-# cp /opt/qutic/bin/pkgin.bak /opt/local/bin/pkgin
-pkgin update
+pkg_add -U pkg_install pkgin
+pkg_admin rebuild || true
 pkgin -y upgrade || true
 
 # we may wanna use hexdump :)
