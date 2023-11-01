@@ -1,5 +1,9 @@
 # Changelog
 
+## 20230910.0 - 2023-11-01
+
+* build image on base 20230910
+
 ## 20230313.2 - 2023-08-16
 
 * build with latest trunk packages
