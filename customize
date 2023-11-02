@@ -14,9 +14,9 @@ sed -i \
   /opt/local/etc/pkg_install.conf
 
 # import key
-rm /opt/local/etc/gnupg/pkgsrc.gpg || true
-mkdir -p /opt/local/etc/gnupg || true
-curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
+# rm /opt/local/etc/gnupg/pkgsrc.gpg || true
+# mkdir -p /opt/local/etc/gnupg || true
+# curl -s https://download.qutic.com/extras/pkgsrc-trunk.gpg > /opt/local/etc/gnupg/pkgsrc.gpg
 
 # get latest updates
 pkg_add -U pkg_install pkgin
