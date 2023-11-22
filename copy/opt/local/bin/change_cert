@@ -2,7 +2,7 @@
 
 if [[ $(uname -s) = "SunOS" ]]; then
   # Illumos / SunOS
-  if [[ $(svcs -H nginx 2>/dev/null | grep online) ]]; then
+  if [[ -n "$(svcs -H nginx 2>/dev/null | grep online)" ]]; then
     # change cert for nginx
     if [[ -f /opt/local/etc/nginx/ssl/nginx.pem ]]; then 
       (
@@ -18,7 +18,7 @@ if [[ $(uname -s) = "SunOS" ]]; then
       exit 1
     fi
   fi
-  if [[ $(svcs -H apache 2>/dev/null | grep online) ]]; then
+  if [[ -n "$(svcs -H apache 2>/dev/null | grep online)" ]]; then
     # change cert for apache
     NAME=$(basename /opt/local/etc/httpd/ssl/*.pem .pem)
     if [[ -n "${NAME}" ]]; then
@@ -35,7 +35,7 @@ if [[ $(uname -s) = "SunOS" ]]; then
       exit 1
     fi
   fi
-  if [[ $(svcs -H sentinel 2>/dev/null) ]]; then
+  if [[ -n "$(svcs -H sentinel 2>/dev/null)" ]]; then
     # change cert for redis/sentinel
     if [[ -f /opt/local/etc/tls/redis.pem ]]; then 
       (
