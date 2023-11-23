@@ -1,5 +1,12 @@
 # Changelog
 
+## 20231113.0 - 2023-11-23
+
+* build image on base 20231113
+* remove own key for now
+* cleanup and ensure latest pkgin
+* fix change_cert script
+
 ## 20230910.0 - 2023-11-01
 
 * build image on base 20230910
