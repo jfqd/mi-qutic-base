@@ -1,5 +1,9 @@
 # Changelog
 
+## 20240116.0 - 2024-04-03
+
+* build image on base 20240116
+
 ## 20231113.0 - 2023-11-23
 
 * build image on base 20231113

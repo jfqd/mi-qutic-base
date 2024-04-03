@@ -1,11 +1,11 @@
 {
   "name":         "qutic-base-64",
-  "version":      "20231113.0",
+  "version":      "20240116.0",
   "description":  "qutic base-64 image",
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-base",
-  "base":         "4e8d68ea-822c-11ee-9438-00151714048c",
+  "base":         "1a45657e-37c9-4b50-b070-c55d90054984",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
