@@ -1,5 +1,9 @@
 # Changelog
 
+## 20240116.1 - 2024-07-11
+
+* rebuild cause of openssl 3.2 update
+
 ## 20240116.0 - 2024-04-03
 
 * build image on base 20240116
