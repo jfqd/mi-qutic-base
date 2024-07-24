@@ -1,5 +1,9 @@
 # Changelog
 
+## 20240116.2 - 2024-07-24
+
+* fix sed command
+
 ## 20240116.1 - 2024-07-11
 
 * rebuild cause of openssl 3.2 update
