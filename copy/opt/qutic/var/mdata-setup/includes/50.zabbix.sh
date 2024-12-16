@@ -35,5 +35,5 @@ if mdata-get zabbix_server 1>/dev/null 2>&1; then
       -e 's|# Include=/opt/local/etc/zabbix_agentd.conf.d/$|Include=/opt/local/etc/zabbix_agentd.conf.d/|' \
       /opt/local/etc/zabbix_agentd.conf
 
-  /usr/sbin/svcadm enable -r svc:/pkgsrc/zabbix:agent
+  /usr/sbin/svcadm enable -r svc:/pkgsrc/zabbix-agent
 fi
