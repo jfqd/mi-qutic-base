@@ -1,5 +1,10 @@
 # Changelog
 
+## 20240116.3 - 2024-12-16
+
+* update ruby to 3.2
+* use latest zabbix-agent
+
 ## 20240116.2 - 2024-07-24
 
 * fix sed command
