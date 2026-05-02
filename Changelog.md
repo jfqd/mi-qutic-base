@@ -1,5 +1,9 @@
 # Changelog
 
+## 20240116.4 - 2026-05-02
+
+* update ruby to 3.4
+
 ## 20240116.3 - 2024-12-16
 
 * update ruby to 3.2
