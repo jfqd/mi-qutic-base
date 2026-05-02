@@ -22,6 +22,7 @@ sed -i \
 pkg_add -U pkg_install pkgin
 pkg_admin rebuild || true
 pkgin -y upgrade || true
+pkgin -y upgrade || true
 
 # we may wanna use hexdump :)
 ln -nfs /usr/bin/xxd /opt/local/bin/hexdump
