@@ -9,5 +9,5 @@ tree
 # grep required to work with sm- commands
 grep
 beats
-ruby33
+ruby34
 zabbix-agent
